@@ -15,9 +15,6 @@ if (isset($_POST['signup'])) {
 	$first_name = mysqli_real_escape_string($con, $_POST['first_name']);
 	$last_name = mysqli_real_escape_string($con, $_POST['last_name']);
 	$birth_date = mysqli_real_escape_string($con, $_POST['birth_date']);
-	$day = mysqli_real_escape_string($con, $_POST['day']);
-	$month = mysqli_real_escape_string($con, $_POST['month']);
-	$year = mysqli_real_escape_string($con, $_POST['year']);
 	$countries = mysqli_real_escape_string($con, $_POST['countries']);
 	$asylum_number = mysqli_real_escape_string($con, $_POST['asylum_number']);
 	$casylum_number = mysqli_real_escape_string($con, $_POST['casylum_number']);
@@ -32,9 +29,6 @@ if (isset($_POST['signup'])) {
 		$last_name_error = "Name must contain only alphabets and space";
 	}
 
-	if($birth_date = "($day)-($month)-($year)") {
-		echo $birth_date;
-	}
 	if(strlen($asylum_number) > 5) {
 		$error = true;
 		$asylum_number_error = "Asylum number must have not greater than five";
